@@ -1,13 +1,13 @@
 # Credit Risk Prediction – Kaggle Competition
 
-## 🏆 Competition Overview
+##  Competition Overview
 - **Problem Type:** Binary Classification  
 - **Objective:** Predict whether a customer will default on a loan  
 - **Evaluation Metric:** AUC / Accuracy  
 
 ---
 
-## 📊 Dataset Description
+##  Dataset Description
 The dataset contains customer-level financial and demographic information such as:
 - Age, income, employment status
 - Credit history and loan details
@@ -15,7 +15,7 @@ The dataset contains customer-level financial and demographic information such a
 
 ---
 
-## 🔍 Approach
+##  Approach
 
 ### 1. Exploratory Data Analysis (EDA)
 - Target class imbalance analysis
@@ -33,7 +33,7 @@ The dataset contains customer-level financial and demographic information such a
 
 ---
 
-## 🤖 Models Used
+##  Models Used
 - Logistic Regression (baseline)
 - Random Forest
 - XGBoost (final model)
@@ -47,7 +47,7 @@ The dataset contains customer-level financial and demographic information such a
 
 ---
 
-## 🧠 Key Learnings
+##  Key Learnings
 - Importance of EDA in understanding financial risk
 - Model selection based on business context
 - Evaluation metrics matter more than accuracy alone
