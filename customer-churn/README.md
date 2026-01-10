@@ -1,13 +1,13 @@
 # Customer Churn Prediction – Kaggle Practice
 
-## 🏆 Problem Overview
+##  Problem Overview
 - **Problem Type:** Binary Classification  
 - **Objective:** Predict whether a customer will churn  
 - **Business Context:** Retaining customers is cheaper than acquiring new ones  
 
 ---
 
-## 📊 Dataset Description
+## Dataset Description
 The dataset includes customer-related attributes such as:
 - Demographics
 - Account and service usage details
@@ -16,7 +16,7 @@ The dataset includes customer-related attributes such as:
 
 ---
 
-## 🔍 Approach
+##  Approach
 
 ### 1. Exploratory Data Analysis (EDA)
 - Churn vs non-churn distribution
@@ -35,12 +35,26 @@ The dataset includes customer-related attributes such as:
 
 ---
 
-## 🤖 Models Used
+##  Models Used
 - Logistic Regression
 - Random Forest
 - XGBoost / LightGBM
 
 ---
 
-## 📈 Results & Insights
-- Bo
+##  Results & Insights
+- Boosting models performed best
+- Contract length and service usage were key churn drivers
+- Feature engineering improved recall for churn class
+
+---
+
+##  Key Learnings
+- Understanding business objective is crucial
+- Class imbalance handling improves recall
+- Feature importance helps explain churn behavior
+
+---
+
+##  Notebook
+ `customer-churn.ipynb`
