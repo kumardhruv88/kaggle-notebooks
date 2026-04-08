@@ -117,56 +117,6 @@ Each sample = one heartbeat represented as **186 time steps**, normalized to [0,
 
 ---
 
-## 📈 Visualizations
-
-### ECG Signal Shapes by Class
-<p align="center">
-  <img src="assets/ecg_classes.png" width="850"/>
-</p>
-
----
-
-### Training Loss Convergence
-<p align="center">
-  <img src="assets/training_loss.png" width="650"/>
-</p>
-
-> Loss dropped from `0.021 → 0.000778` over 50 epochs — a **96% reduction**.
-
----
-
-### Original vs Reconstructed ECG Signals
-> The **pink shaded region** is the reconstruction error gap. Wider gap = higher anomaly score.
-
-<p align="center">
-  <img src="assets/reconstruction_comparison.png" width="850"/>
-</p>
-
----
-
-### Full Evaluation Dashboard
-<p align="center">
-  <img src="assets/evaluation_dashboard.png" width="900"/>
-</p>
-
----
-
-### Latent Space — PCA and t-SNE of 32D Bottleneck
-> No class labels used. Clusters emerge **purely from reconstruction learning**.
-
-<p align="center">
-  <img src="assets/latent_space.png" width="850"/>
-</p>
-
----
-
-### Per-Class Anomaly Detection Rate
-<p align="center">
-  <img src="assets/per_class_analysis.png" width="850"/>
-</p>
-
----
-
 ## 🔬 Key Findings
 
 **Fusion beats are the hardest to detect (0.6% detection rate)**  
@@ -199,4 +149,3 @@ Normal mean MSE: `0.000810` vs Anomaly mean MSE: `0.003746`. A clear, reliable s
 
 
 
-<p align="center">Built by <a href="https://github.com/kumardhruv88">Dhruv Kumar</a> · B.Tech CSE · NSUT New Delhi</p>
