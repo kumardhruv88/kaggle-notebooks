@@ -1,0 +1,48 @@
+Data Science & Machine Learning Interview Questions
+Focus: Time-Series Air Quality Analysis (New York vs Bogota)
+Role: Senior Data Scientist / Data Analyst
+
+1. Handling Missing Data: 
+In the notebook, you handled short gaps (≤ 24 hours) using time-based interpolation but left an 8-day sensor outage as NaN. Explain the statistical reasoning behind this decision. What risk does interpolating long outages introduce to a time-series model?
+
+2. Anomaly Detection Design: 
+You chose a 7-day rolling Z-score for anomaly detection rather than a global Z-score. Why is a dynamic/rolling baseline critical for environmental or weather-dependent data? What would happen if you used a 24-hour window instead of 7 days?
+
+3. Skewed Distributions: 
+The New York PM2.5 data was heavily right-skewed with a massive tail of extreme spikes. How does this skewness affect standard outlier detection methods (like 3-sigma rules)? Did your rolling Z-score method account for this effectively?
+
+4. Statistical Significance vs. Practical Significance: 
+The correlation between New York and Bogota was ~0.055, which yielded a statistically significant p-value (p < 0.05). As a Senior Data Scientist, how do you explain to a non-technical stakeholder that a "significant" result here is actually practically meaningless?
+
+5. Rolling Window Parameters: 
+When calculating the 24-hour rolling mean to check against WHO standards, how did you handle windows that contained missing values? What is the 'min_periods' parameter in Pandas, and how do you decide what value to set it to?
+
+6. Data Quality & Instrument Artifacts: 
+The raw data contained negative PM2.5 values. You converted these to NaNs rather than setting them to 0. Why? What mathematical bias would you introduce into the rolling mean if you simply clipped negative instrument noise to 0?
+
+7. Feature Engineering for Time-Series: 
+Your diurnal analysis proved that Bogota's pollution is traffic-driven (8-10 AM spikes), while New York's is not. If you were building an XGBoost model to predict tomorrow's PM2.5, what specific time-based features would you extract from the datetime index to capture this?
+
+8. Forecasting Extreme Events: 
+New York experiences episodic extreme pollution spikes (e.g., reaching 66 µg/m³). Traditional forecasting models (like ARIMA or Prophet) often smooth over these spikes. What modeling approach or loss function would you use if your primary goal was to predict these rare, extreme events?
+
+9. Correlation Metrics: 
+Why might a Data Scientist look at both Pearson and Spearman correlation coefficients when comparing two environmental time series? What specific data characteristics would cause these two metrics to diverge significantly?
+
+10. Evaluating Anomaly Frequency: 
+You flagged hours where the absolute Z-score exceeded 3.0. In a perfectly Gaussian (normal) distribution, roughly what percentage of data falls outside 3 standard deviations? Your New York analysis flagged ~1.0% of data—what does this tell you about the underlying distribution?
+
+11. Streaming vs. Batch Processing: 
+This notebook analyzes a static 7-month dataset. If we needed to deploy this pipeline to analyze real-time streaming data (e.g., Kafka streams), how would your approach to calculating rolling means and imputing missing data have to change?
+
+12. Detecting Sensor Drift: 
+Suppose a sensor slowly loses calibration over 6 months, causing its baseline readings to drift upwards by 10%. Would your 7-day rolling Z-score anomaly detector catch this slow drift? Why or why not? How would you design a test specifically for sensor drift?
+
+13. Causal Inference vs. Correlation: 
+You hypothesized that New York's winter spikes were caused by heating usage and temperature inversions. What additional datasets (e.g., weather, energy grids) would you need to join to this data to prove causality, and what statistical test would you use?
+
+14. Data Visualization Choices: 
+In the 4-panel EDA, you chose a Violin Plot over a standard Box Plot to compare the two cities. What specific information does a violin plot convey about the Bogota distribution that a box plot would have hidden?
+
+15. Executive Communication: 
+If a city mayor gave you 60 seconds to explain the difference between "episodic" (New York) and "chronic/structural" (Bogota) pollution based on your data, what specific metric or visualization from your dashboard would you show them to make the point immediately clear?
